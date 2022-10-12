@@ -113,9 +113,10 @@ class EufyVacuum(VacuumEntity):
     @property
     def status(self):
         """Return the status of the vacuum cleaner."""
-        if self.robovac.error_code != robovac.ErrorCode.NO_ERROR:
-            return STATE_ERROR
-        elif self.robovac.go_home:
+#         if self.robovac.error_code != robovac.ErrorCode.NO_ERROR:
+#             return STATE_ERROR
+#         el
+        if self.robovac.go_home:
             return STATE_RETURNING
         elif self.robovac.work_status == robovac.WorkStatus.RUNNING:
             return STATE_CLEANING
